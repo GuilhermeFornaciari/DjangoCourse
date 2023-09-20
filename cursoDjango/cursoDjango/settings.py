@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'votacao',
+    'votacao.apps.VotacaoConfig',
 ]
 
 MIDDLEWARE = [
@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'PT-br'
 
-TIME_ZONE = 'UTC-4'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
