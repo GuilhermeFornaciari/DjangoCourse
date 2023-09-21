@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+{% include "head.html" %}
+<body>
+    <a href="{% url 'index' %}"> voltar </a>
+    <h1>{{pergunta.texto}}</h1>
+    <form action="{% url 'votar' pergunta.id %}" method="post">
+        {% csrf_token %}
+        {% for alternativa in pergunta.alternativa_set.all %}
+        <input type="radio" name="alternativa" id="{{alternativa.id}}" value="{{alternativa.id}}">
+        <label for="alternativa">{{alternativa.texto}}</label> <br>
+        {% endfor %}
+        <button type="submit">Enviar voto</button>
+    </form>
+
+</body>
+</html>
+
